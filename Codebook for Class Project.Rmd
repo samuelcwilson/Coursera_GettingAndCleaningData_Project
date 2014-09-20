@@ -2,11 +2,12 @@ title: "CodeBook for Class Project"
 author: "Samuel Wilson"
 date: "Saturday, September 20, 2014"
 
+## Project
 The data set "Final Tidy Dataset.txt" is the result of collecting, working with and cleaning the raw data provided (see Readme.md). It is the text output of 180 observations of 86 variables (excluding Subject numbers and Activity labels). The variables in this data set, are calculated mean values per subject (volunteers) and activity, that derive from the mean and standard deviation values of features measured from an accelerometer and gyroscope as presented in an experimental data set (UCI HAR Dataset).
 
 The activities were:
 1.    Walking
-2.      Walking upstairs
+2.    Walking upstairs
 3.	Walking downstairs
 4.	Sitting
 5.	Standing
@@ -16,3 +17,25 @@ Mean and standard deviation values:
 tBodyAcc-XYZ tGravityAcc-XYZ tBodyAccJerk-XYZ tBodyGyro-XYZ tBodyGyroJerk-XYZ tBodyAccMag tGravityAccMag tBodyAccJerkMag tBodyGyroMag tBodyGyroJerkMag fBodyAcc-XYZ fBodyAccJerk-XYZ fBodyGyro-XYZ fBodyAccMag fBodyAccJerkMag fBodyGyroMag fBodyGyroJerkMag gravityMean tBodyAccMean tBodyAccJerkMean tBodyGyroMean tBodyGyroJerkMean
 
 For details about the original data set (description and raw 3-axial signals), please look at Human Activity Recognition Using Smartphones Dataset.txt which is from the original data site. The file is included in the repo.
+
+## Libraries Used
+plyr
+RCurl
+reshape2
+
+## Processing steps
+
+1. Files were download from website, unzipped, and locally saved.
+2. Locally saved data was read into data frames.
+3. Variable names were loaded and cleanup to make more readable.
+4. Names were added to data frames.
+5. Data frames were combined.
+6. Labels were matched to Activites
+7. Means and standard deviations were indexed.
+8. Everything was combined into a master dataset.
+9. The master dataset was melted and recast using reshape.
+10.  Dataset complete, now just document.  
+
+## Output files
+masterdata set = Final Complete Dataset.txt
+tidy dataset = Final Tidy Dataset.txt
